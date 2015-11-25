@@ -1,0 +1,21 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/momentitem_detail"
+    style="?android:attr/textAppearanceLarge" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:padding="16dp" android:textIsSelectable="true"
+    tools:context="team10.cs442.project.com.SharedLibs.MomentItemDetailFragment"
+    android:background="#ffffffff"
+    android:autoText="false" >
+
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/simageview"
+    android:layout_gravity="center" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="New Text"
+    android:id="@+id/stext"
+    android:layout_gravity="center_horizontal|top" />
+</FrameLayout>

@@ -1,0 +1,7 @@
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/landmarkitem_list"
+    android:name="team10.cs442.project.com.Geo_Libs.LandMark.LandmarkItemListFragment"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_marginLeft="16dp" android:layout_marginRight="16dp"
+    tools:context="team10.cs442.project.com.Geo_Libs.LandMark.LandmarkItemListActivity"
+    tools:layout="@android:layout/list_content" />

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateItemID"
+    android:weightSum="1"
+    android:background="#aa8fbfff">
+
+
+    <TextView
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:text="Log Detail:"
+        android:id="@+id/textView8"
+        android:layout_weight="0.07"
+        android:width="20dp"
+        android:height="50dp"
+        android:layout_marginTop="57dp"
+        android:editable="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="24dp" />
+
+    <EditText
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView9"
+        android:layout_weight="0.07"
+        android:width="20dp"
+        android:height="50dp"
+        android:editable="false"
+        android:layout_marginLeft="36dp"
+        android:layout_alignTop="@+id/textView8"
+        android:layout_alignStart="@+id/button"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_weight="0.07"
+        android:text="Update"
+        android:width="20dp"
+        android:height="50dp"
+        android:onClick="updateItem()"
+        android:layout_below="@+id/textView8"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Change Log Detail"
+        android:textColor="#000000"
+        android:id="@+id/textView15"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

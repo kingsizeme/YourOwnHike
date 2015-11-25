@@ -1,0 +1,31 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="MyTheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">#8bb3f0</item>
+    </style>
+
+    <color name="backgrounds">#79ff9f </color>
+
+
+    <string-array name="trail_arrays">
+        <item>Balanced Rock</item>
+        <item>CCC Trail</item>
+        <item>Devil’s Doorway</item>
+        <item>East Bluff</item>
+        <item>East Bluff Woods</item>
+        <item>Grottos</item>
+        <item>Group Camp Trail</item>
+        <item>Uplands Trail Loop</item>
+        <item>Sauk Point Trail</item>
+        <item>Johnson Moraine Loop</item>
+        <item>Potholes</item>
+        <item>Tumbled Rocks</item>
+        <item>Steinke Basin Loop</item>
+        <item>West Bluff</item>
+    </string-array>
+</resources>

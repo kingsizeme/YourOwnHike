@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="team10.cs442.project.com" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <!--
+ The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but are recommended.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <service android:name="com.parse.PushService" />
+
+    <receiver
+        android:name="com.parse.ParsePushBroadcastReceiver"
+        android:exported="false" >
+        <intent-filter>
+            <action android:name="com.parse.push.intent.RECEIVE" />
+            <action android:name="com.parse.push.intent.DELETE" />
+            <action android:name="com.parse.push.intent.OPEN" />
+        </intent-filter>
+    </receiver>
+    <receiver
+        android:name="com.parse.GcmBroadcastReceiver"
+        android:permission="com.google.android.c2dm.permission.SEND" >
+        <intent-filter>
+            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+            <!-- IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
+            <category android:name="team10.cs442.project.com" />
+        </intent-filter>
+    </receiver>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <uses-permission android:name="android.permission.WAKE_LOCK" />
+        <uses-permission android:name="android.permission.VIBRATE" />
+        <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+        <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+        <!--
+          IMPORTANT: Change "com.parse.starter.permission.C2D_MESSAGE" in the lines below
+          to match your app's package name + ".permission.C2D_MESSAGE".
+        -->
+        <permission
+            android:name="team10.cs442.project.com.permission.C2D_MESSAGE"
+            android:protectionLevel="signature" />
+
+        <uses-permission android:name="team10.cs442.project.com.permission.C2D_MESSAGE" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name=".MainActs.MainAct"
+            android:label="@string/app_name"
+            android:theme="@style/MyTheme" >
+        </activity>
+        <activity
+            android:name=".Logon_Or_Reg"
+            android:label="@string/title_activity_logon__or__reg"
+            android:parentActivityName=".MainActs.MainAct"
+            android:theme="@style/MyTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="team10.cs442.project.com.MainActs.MainAct" />
+        </activity>
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider491806611001390"
+            android:exported="true" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MyLog"
+            android:label="@string/title_activity_my_log"
+            android:theme="@style/MyTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="team10.cs442.project.com.MainActs.MainAct" />
+        </activity>
+        <activity
+            android:name=".GPS_tracking.Tracking_map"
+            android:label="@string/title_activity_location__info"
+            android:theme="@style/MyTheme" >
+        </activity>
+        <activity
+            android:name=".Locations"
+            android:label="@string/title_activity_locations"
+            android:parentActivityName=".MainActs.MainAct"
+            android:theme="@style/MyTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="team10.cs442.project.com.MainActs.MainAct" />
+        </activity>
+        <activity
+            android:name=".SharedLibs.Share_Input"
+            android:label="@string/title_activity_share__input"
+            android:theme="@style/MyTheme"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".SharedLibs.MomentItemListActivity"
+            android:label="@string/title_momentitem_list"
+            android:parentActivityName=".MainActs.MainAct"
+            android:theme="@style/MyThemeCompat" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="team10.cs442.project.com.MainActs.MainAct" />
+        </activity>
+        <activity
+            android:name=".SharedLibs.MomentItemDetailActivity"
+            android:label="@string/title_momentitem_detail"
+            android:parentActivityName=".SharedLibs.MomentItemListActivity"
+            android:theme="@style/MyThemeCompat" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="team10.cs442.project.com.SharedLibs.MomentItemListActivity" />
+        </activity>
+        <activity
+            android:name=".Welcome_Screen"
+            android:label="YourOwnHike"
+            android:theme="@style/MyTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Plant_Libs.PlantItemsListActivity"
+            android:label="@string/title_plantitems_list"
+            android:theme="@style/MyThemeCompat" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="team10.cs442.project.com.Locations" />
+        </activity>
+        <activity
+            android:name=".Plant_Libs.PlantItemsDetailActivity"
+            android:label="@string/title_plantitems_detail"
+            android:parentActivityName=".Plant_Libs.PlantItemsListActivity"
+            android:theme="@style/MyThemeCompat" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="team10.cs442.project.com.Plant_Libs.PlantItemsListActivity" />
+        </activity>
+        <activity
+            android:name=".Animal_Libs.AnimalItemsListActivity"
+            android:label="@string/title_animalitems_list"
+            android:parentActivityName=".Locations"
+            android:theme="@style/MyThemeCompat" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="team10.cs442.project.com.Locations" />
+        </activity>
+        <activity
+            android:name=".Animal_Libs.AnimalItemsDetailActivity"
+            android:label="@string/title_animalitems_detail"
+            android:parentActivityName=".Animal_Libs.AnimalItemsListActivity"
+            android:theme="@style/MyThemeCompat" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="team10.cs442.project.com.Animal_Libs.AnimalItemsListActivity" />
+        </activity>
+        <activity
+            android:name=".Trail_Detail.TrailsItemsListActivity"
+            android:label="@string/title_trailsitems_list"
+            android:theme="@style/MyThemeCompat" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="team10.cs442.project.com.Locations" />
+        </activity>
+        <activity
+            android:name=".Trail_Detail.TrailsItemsDetailActivity"
+            android:label="@string/title_trailsitems_detail"
+            android:parentActivityName=".Trail_Detail.TrailsItemsListActivity"
+            android:theme="@style/MyThemeCompat" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="team10.cs442.project.com.Trail_Detail.TrailsItemsListActivity" />
+        </activity>
+        <activity
+            android:name=".Geo_Libs.Geo_Main_Act"
+            android:label="@string/title_activity_geo__main_"
+            android:parentActivityName=".MainActs.MainAct"
+            android:theme="@style/MyThemeCompat" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="team10.cs442.project.com.MainActs.MainAct" />
+        </activity>
+        <activity
+            android:name=".Geo_Libs.LandMark.LandmarkItemListActivity"
+            android:label="@string/title_landmarkitem_list" >
+        </activity>
+        <activity
+            android:name=".Geo_Libs.LandMark.LandmarkItemDetailActivity"
+            android:label="@string/title_landmarkitem_detail"
+            android:parentActivityName=".Geo_Libs.LandMark.LandmarkItemListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="team10.cs442.project.com.Geo_Libs.LandMark.LandmarkItemListActivity" />
+        </activity>
+        <activity
+            android:name=".SharedLibs.Pref_Act_Moment"
+            android:label="@string/title_activity_pref__act__moment"
+            android:theme="@style/MyThemeCompat" >
+        </activity>
+        <activity
+            android:name=".tmp_Geo.GeoItemsListActivity"
+            android:label="@string/title_geoitems_list"
+            android:theme="@style/MyThemeCompat" >
+        </activity>
+        <activity
+            android:name=".tmp_Geo.GeoItemsDetailActivity"
+            android:label="@string/title_geoitems_detail"
+            android:parentActivityName=".tmp_Geo.GeoItemsListActivity"
+            android:theme="@style/MyThemeCompat" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="team10.cs442.project.com.tmp_Geo.GeoItemsListActivity" />
+        </activity>
+        <activity
+            android:name=".Log_Libs.UpdateItemID"
+            android:label="@string/title_activity_update_item_id"
+            android:theme="@style/MyThemeCompat" >
+        </activity>
+        <activity
+            android:name=".Log_Libs.Add_Log"
+            android:label="@string/title_activity_add__log"
+            android:theme="@style/MyThemeCompat" >
+        </activity>
+        <activity
+            android:name=".Log_Libs.Delete_log"
+            android:label="@string/title_activity_delete_log"
+            android:theme="@style/MyThemeCompat" >
+        </activity>
+        <activity
+            android:name=".Log_Libs.Update_log"
+            android:label="@string/title_activity_update_log"
+            android:theme="@style/MyThemeCompat" >
+        </activity>
+        <activity
+            android:name=".SharedLibs.share_take_image"
+            android:label="@string/title_activity_share_take_image"
+            android:theme="@style/MyTheme"
+            android:parentActivityName=".SharedLibs.Share_Input">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="team10.cs442.project.com.SharedLibs.Share_Input" />
+        </activity>
+    </application>
+
+</manifest>

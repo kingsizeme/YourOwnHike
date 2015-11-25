@@ -1,0 +1,115 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
+    android:layout_height="match_parent" android:paddingLeft="1dp"
+    android:paddingRight="1dp"
+    android:paddingTop="1dp"
+    android:paddingBottom="1dp" tools:context=".MainAct"
+    android:id="@+id/main_act"
+    android:contextClickable="false"
+    android:focusable="false"
+    android:background="#aa8fbfff"
+    android:clickable="true">
+
+    <TextView android:text="Hello Guest" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/username_show"
+        android:textSize="32dp"
+        android:typeface="monospace"
+        android:textStyle="bold"
+        android:textColor="@android:color/background_dark"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Local Info!"
+        android:id="@+id/but_location"
+        android:onClick="OpenLocations"
+        android:background="@drawable/button_2"
+        android:typeface="monospace"
+        android:elevation="10dp"
+        android:layout_below="@+id/username_show"
+        android:layout_alignStart="@+id/but_moment"
+        android:layout_marginTop="40dp" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Track Me!"
+        android:id="@+id/but_track"
+        android:onClick="OpenTracking"
+        android:background="@drawable/button_2"
+        android:typeface="monospace"
+        android:elevation="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_alignTop="@+id/but_location"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Share"
+        android:id="@+id/but_share"
+        android:onClick="OpenShare"
+        android:background="@drawable/button_2"
+        android:typeface="monospace"
+        android:elevation="10dp"
+        android:layout_below="@+id/but_moment"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="65dp"
+        android:layout_marginLeft="5dp" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="My Log"
+        android:id="@+id/but_log"
+        android:onClick="OpenLogs"
+        android:background="@drawable/button_2"
+        android:typeface="monospace"
+        android:elevation="10dp"
+        android:layout_below="@+id/but_track"
+        android:layout_alignStart="@+id/but_track"
+        android:layout_marginTop="56dp" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Log In"
+        android:id="@+id/but_log_in"
+        android:onClick="OpenLogIn"
+        android:background="@drawable/button_2"
+        android:typeface="monospace"
+        android:elevation="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Friends"
+        android:id="@+id/but_FB"
+        android:background="@drawable/button_2"
+        android:typeface="monospace"
+        android:elevation="10dp"
+        android:layout_alignBaseline="@+id/but_share"
+        android:layout_alignBottom="@+id/but_share"
+        android:layout_alignStart="@+id/but_log" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Moments"
+        android:id="@+id/but_moment"
+        android:onClick="OpenMoments"
+        android:background="@drawable/button_2"
+        android:typeface="monospace"
+        android:elevation="10dp"
+        android:layout_alignTop="@+id/but_log"
+        android:layout_alignStart="@+id/but_share"
+        android:layout_marginLeft="5dp" />
+
+</RelativeLayout>

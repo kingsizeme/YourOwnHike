@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="team10.cs442.project.com.Locations"
+    android:background="#abb0ff">
+
+    <Button
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:text="Plant"
+        android:id="@+id/but_loc_plant"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/button_4"
+        android:layout_toStartOf="@+id/but_loc_animal"
+        android:elevation="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Animals"
+        android:id="@+id/but_loc_animal"
+        android:background="@drawable/button_4"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/but_loc_geo"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:elevation="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Geological Information"
+        android:id="@+id/but_loc_geo"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/button_4"
+        android:elevation="10dp" />
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        android:id="@+id/location_img"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:elevation="10dp"
+        android:focusable="false" />
+
+</RelativeLayout>
